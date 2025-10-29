@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .product-scroll-parallax::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-b from-black/90 to-black/0 w-full h-[300px];
+  }
+
+  .slick-hero {
+    .slick-track {
+      @apply flex justify-center items-center;
+    }
+    .slick-slide {
+      @apply flex justify-center items-center !important;
+    }
+    .slide-item {
+      @apply text-center px-[10px] !important;
+    }
+    .slick-slide {
+      height: 800px; /* ✅ equal height for all containers */
+    }
+    img {
+      @apply object-contain transition-all duration-500;
+      max-height: 100%; /* ✅ never overflow vertical space */
+      width: 100%; /* ✅ keep proper aspect ratio */
+      object-fit: cover;
+    }
+    /* Size Variations */
+    .slide-big img {
+      max-height: 100%; /* Full height */
+      @apply opacity-100;
+    }
+
+    .slide-medium img {
+      max-height: 65%;
+      @apply opacity-90;
+    }
+
+    .slide-small img {
+      max-height: 40%;
+      @apply opacity-50;
+    }
+  }
+  .product-scroll {
+    .item.item-one > * {
+      @apply text-white uppercase text-[42px] leading-[112%] font-[400];
+    }
+  }
+}

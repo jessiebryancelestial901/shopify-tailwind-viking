@@ -1,0 +1,40 @@
+{% if section.settings.section_title != blank %}
+    <section class="product-scroll pb-[50px]">
+        <div class = "container h-full mx-auto">
+            <div class = "flex flex-nowrap w-full justify-between items-stretch h-full gap-10">
+                <div class = "item item-one w-full text-center">
+                    {{ section.settings.section_title | raw }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% if section.settings.bg_image %}
+    <section class="relative product-scroll product-scroll-parallax relative h-[90vh] bg-fixed bg-top bg-cover"
+             style="background-image: url('{{ section.settings.bg_image | img_url: 'master' }}');">
+    </section>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Parallax Section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "section_title",
+            "label": "Section Title",
+            "default": "<p>Featured Section</p>"
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Parallax Section",
+        }
+    ]
+}
+{% endschema %}

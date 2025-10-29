@@ -1,0 +1,112 @@
+<section class="gallery pt-[100px] my-[150px]">
+    <div class="container max-w-full">
+        {% if section.settings.section_title != blank %}
+            <div class="flex flex-nowrap w-full justify-between gap-10">
+                <div class="item item-one w-full text-center">
+                    <h3 class="text-white uppercase text-[80px] leading-[112%] font-[400] uppercase">{{ section.settings.section_title }}</h3>
+                </div>
+            </div>
+        {% endif %}
+        <div class="gallery-slider pt-5 px-[5%]">
+            <div class="slick-hero mx-auto flex items-center justify-center">
+                {% for block in section.blocks %}
+                    <div class="slide-item">
+                        {% if block.settings.slide_image %}
+                            <img src="{{ block.settings.slide_image | img_url: 'master' }}"
+                                 alt="{{ block.settings.slide_title | escape }}">
+                        {% endif %}
+
+                        {% if block.settings.slide_title != blank %}
+                            <h3>{{ block.settings.slide_title }}</h3>
+                        {% endif %}
+
+                        {% if block.settings.slide_text != blank %}
+                            <p>{{ block.settings.slide_text }}</p>
+                        {% endif %}
+
+                        {% if block.settings.slide_link != blank %}
+                            <a href="{{ block.settings.slide_link }}" class="slide-btn">Learn More</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+	jQuery(document).ready(function($) {
+
+		var $slider = $('.slick-hero');
+		if (!$slider.length) return;
+
+		function updateSizes() {
+			var $slides = $slider.find('.slick-slide');
+			var centerSlide = $slider.find('.slick-center');
+			if (!centerSlide.length) return;
+
+			var centerIndex = centerSlide.data('slick-index');
+
+			$slides.removeClass('slide-big slide-medium slide-small');
+
+			$slides.each(function () {
+				var slideIndex = $(this).data('slick-index');
+				var diff = Math.abs(centerIndex - slideIndex);
+
+				if (diff === 0) $(this).addClass('slide-big');
+				else if (diff === 1) $(this).addClass('slide-medium');
+				else $(this).addClass('slide-small');
+			});
+		}
+
+		$slider.on('init afterChange', updateSizes);
+
+		$slider.slick({
+			centerMode: true,
+			centerPadding: '0px',
+			slidesToShow: 5,
+			arrows: false,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			infinite: true,
+			variableWidth: false,
+			focusOnSelect: true,
+		});
+
+	});
+</script>
+
+
+{% schema %}
+{
+    "name": "Slick Slider",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_title",
+            "label": "Section Title",
+            "default": "Featured Slider"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "slide",
+            "name": "Slide",
+            "settings": [
+                { "type": "image_picker", "id": "slide_image", "label": "Image" },
+                { "type": "text", "id": "slide_title", "label": "Title" },
+                { "type": "textarea", "id": "slide_text", "label": "Description" },
+                { "type": "url", "id": "slide_link", "label": "Link (optional)" }
+            ]
+        }
+    ],
+    "max_blocks": 10,
+    "presets": [
+        {
+        "name": "Slick Slider",
+        "category": "Image"
+        }
+    ]
+}
+{% endschema %}
