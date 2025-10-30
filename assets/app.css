@@ -691,6 +691,42 @@ video {
   }
 }
 
+.about{
+  .item {
+    position: relative;
+  }
+  .item {
+    &.item-second {
+      position: relative;
+    }
+    &.item-second::before {
+      content: "";
+    }
+    &.item-second::before {
+      position: absolute;
+    }
+    &.item-second::before {
+      bottom: -200px;
+    }
+    &.item-second::before {
+      left: 0px;
+    }
+    &.item-second::before {
+      display: block;
+    }
+    &.item-second::before {
+      height: 100px;
+    }
+    &.item-second::before {
+      width: 1px;
+    }
+    &.item-second::before {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+    }
+  }
+}
+
 .static {
   position: static;
 }

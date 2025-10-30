@@ -48,4 +48,18 @@
       @apply text-white uppercase text-[42px] leading-[112%] font-[400];
     }
   }
+
+    .about{
+        .item {
+            @apply relative;
+            &.item-second {
+                 @apply relative;
+            }
+            &.item-second::before {
+                 content: "";
+                 @apply block absolute bottom-[-200px] left-0 h-[100px] w-[1px] bg-white;
+            }
+        }
+    }
+
 }
