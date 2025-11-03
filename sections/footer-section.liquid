@@ -1,0 +1,129 @@
+<section class="footer py-[50px] bg-black text-white">
+    <div class="container h-full">
+        <div class="flex flex-nowrap w-full gap-10 flex-col md:flex-row">
+
+            <!-- Left Column -->
+            <div class="flex flex-col item item-one w-full md:max-w-[50%] items-center justify-center text-center">
+                {% if section.settings.logo_main != blank %}
+                    <a href="{{ section.settings.logo_main_link }}" title="Main Logo Link">
+                        <img src="{{ section.settings.logo_main | img_url: '400x' }}" alt="{{ section.settings.logo_main.alt | default: 'Viking Logo' }}">
+                    </a>
+                {% endif %}
+
+                {% if section.settings.logo_secondary != blank %}
+                    <a href="{{ section.settings.logo_secondary_link }}" title="Secondary Logo Link">
+                        <img src="{{ section.settings.logo_secondary | img_url: '400x' }}" alt="{{ section.settings.logo_secondary.alt | default: 'Andi-Co Australia Logo' }}" class="my-5">
+                    </a>
+                {% endif %}
+
+                {% if section.settings.description != blank %}
+                    <p class="text-[16px]">{{ section.settings.description }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Right Column -->
+            <div class="item item-second w-full md:max-w-[50%] text-[18px] pl-0 md:pl-[20%] text-center md:text-left">
+                {% if section.settings.company_name != blank %}
+                    <h4 class="mb-5 text-[24px] uppercase font-semibold">{{ section.settings.company_name }}</h4>
+                {% endif %}
+
+                {% if section.settings.phone != blank %}
+                    <p>Tel: {{ section.settings.phone }}</p>
+                {% endif %}
+                {% if section.settings.weekday_hours != blank %}
+                    <p>{{ section.settings.weekday_hours }}</p>
+                {% endif %}
+                {% if section.settings.weekend_hours != blank %}
+                    <p>{{ section.settings.weekend_hours }}</p>
+                {% endif %}
+
+                {% if section.settings.button_label != blank %}
+                    <a
+                            href="{{ section.settings.button_link }}"
+                            title="{{ section.settings.button_label }}"
+                            class="block mt-10 font-bold text-[19px] uppercase underline hover:text-gray-300 transition-all"
+                    >
+                        {{ section.settings.button_label }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Footer - Viking Info",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo_main",
+            "label": "Main Logo"
+        },
+        {
+            "type": "text",
+            "id": "logo_main_link",
+            "label": "Main Logo Link",
+            "default": "/"
+        },
+        {
+            "type": "image_picker",
+            "id": "logo_secondary",
+            "label": "Secondary Logo"
+        },
+        {
+            "type": "text",
+            "id": "logo_secondary_link",
+            "label": "Secondary Logo Link",
+            "default": "https://andico.com.au"
+        },
+        {
+            "type": "text",
+            "id": "description",
+            "label": "Company Description",
+            "default": "Official distributor of premium household and commercial appliances in Australia."
+        },
+        {
+            "type": "text",
+            "id": "company_name",
+            "label": "Company Name",
+            "default": "Andi-Co Australia Pty. Ltd."
+        },
+        {
+            "type": "text",
+            "id": "phone",
+            "label": "Phone Number",
+            "default": "1800 685 899"
+        },
+        {
+            "type": "text",
+            "id": "weekday_hours",
+            "label": "Weekday Hours",
+            "default": "Monday to Friday: 9am to 4:30pm"
+        },
+        {
+            "type": "text",
+            "id": "weekend_hours",
+            "label": "Weekend / Public Holiday Hours",
+            "default": "Weekend / Public Holiday: Closed"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label",
+            "default": "Contact Us"
+        },
+        {
+            "type": "text",
+            "id": "button_link",
+            "label": "Button Link",
+            "default": "/pages/contact"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Footer - Viking Info"
+        }
+    ]
+}
+{% endschema %}

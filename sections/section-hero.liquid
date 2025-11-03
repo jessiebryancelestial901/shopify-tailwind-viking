@@ -1,0 +1,49 @@
+<section id="hero" class="hero min-h-[calc(100vh-134px)] w-full relative overflow-hidden flex items-end bg-black text-white">
+
+    {% if section.settings.bg_image %}
+        <!-- Banner Image -->
+        <img src="{{ section.settings.bg_image | img_url: 'master' }}"
+             alt="Hero Banner"
+             class="absolute inset-0 w-full max-w-full lg:max-w-[80%] mx-auto h-full object-cover">
+    {% endif %}
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto text-center px-6 pb-10">
+        {% if section.settings.section_title != blank %}
+            {{ section.settings.section_title | raw }}
+        {% endif %}
+        {% if section.settings.section_second_title != blank %}
+            <p class="subtitle mb-8 text-gray-200"> {{ section.settings.section_second_title }}  </p>
+        {% endif %}
+    </div>
+
+</section>
+
+{% schema %}
+{
+    "name": "Hero Section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "section_title",
+            "label": "Section Title",
+            "default": "<p>Featured Section</p>"
+        },
+        {
+            "type": "text",
+            "id": "section_second_title",
+            "label": "Section Second Title",
+            "default": "Featured Section"
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Hero Section"
+        }
+    ]
+}
+{% endschema %}

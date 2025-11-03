@@ -1,12 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
+  .container {
+    @appy mx-auto;
+  }
   .product-scroll-parallax::before {
     content: '';
     @apply absolute inset-0 bg-gradient-to-b from-black/90 to-black/0 w-full h-[300px];
   }
+  .hero {
+    @apply p-5;
 
+    h1 {
+      @apply text-[40px] sm:text-[55px] md:text-[75px] lg:text-[114px]
+            font-normal text-white uppercase mb-4 leading-[4rem]
+            sm:leading-[5rem] md:leading-[7rem] lg:leading-[10rem];
+    }
+    p {
+      @apply text-[24px];
+    }
+  }
   .slick-hero {
     .slick-track {
       @apply flex justify-center items-center;
@@ -45,6 +60,27 @@
   .product-scroll {
     .item.item-one > * {
       @apply text-white uppercase text-[42px] leading-[112%] font-[400];
+    }
+  }
+
+  .about {
+    .item {
+      @apply relative;
+      &.item-second {
+        @apply relative;
+      }
+      &.item-second::before {
+        content: '';
+        @apply block absolute bottom-[-200px] left-0 h-[100px] w-[1px] bg-white;
+      }
+    }
+  }
+
+  .footer {
+    .item-second {
+      p {
+        @apply mb-3;
+      }
     }
   }
 }

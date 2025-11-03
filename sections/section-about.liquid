@@ -1,0 +1,40 @@
+<section id = "about" class="about h-[50vh] mt-[100px] mb-10 py-10 pb-[300px]">
+    <div class = "container mx-auto h-full">
+        <div class = "flex flex-nowrap w-full justify-between items-stretch h-full gap-10">
+            {% if section.settings.section_title != blank %}
+                <div class = "item item-one w-full md:max-w-1/2 items-start content-start">
+                    <h3 class = "text-white uppercase text-[52px] leading-[112%] font-[400]">{{ section.settings.section_title }}</h3>
+                </div>
+            {% endif %}
+            <div class = "item item-second w-full md:max-w-1/2 items-end content-end">
+                <p class = "text-white text-[22px]">{{ section.settings.section_second_title }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "About Section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_title",
+            "label": "Section Title",
+            "default": "Featured Section"
+        },
+        {
+            "type": "text",
+            "id": "section_second_title",
+            "label": "Section Second Title",
+            "default": "Featured Section"
+        }
+
+    ],
+    "presets": [
+        {
+            "name": "About Section"
+        }
+    ]
+}
+{% endschema %}
