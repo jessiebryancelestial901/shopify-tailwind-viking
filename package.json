@@ -31,5 +31,9 @@
   "prettier": "@trelliscommerce/prettier-config",
   "lint-staged": {
     "*.{js,css}": "prettier --write"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./assets/app-tailwind.css -o ./assets/app.css --watch",
+    "build": "npx tailwindcss -i ./assets/app-tailwind.css -o ./assets/app.css --minify"
   }
 }

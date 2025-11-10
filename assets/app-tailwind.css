@@ -33,7 +33,7 @@
       @apply text-center px-[10px] !important;
     }
     .slick-slide {
-      height: 800px; /* ✅ equal height for all containers */
+      @apply mt-[20px] lg:mt-0 h-full lg:h-[800px];
     }
     img {
       @apply object-contain transition-all duration-500;
@@ -71,7 +71,7 @@
       }
       &.item-second::before {
         content: '';
-        @apply block absolute bottom-[-200px] left-0 h-[100px] w-[1px] bg-white;
+        @apply block absolute bottom-[-200px] left-[50%] lg:left-0 h-[100px] w-[1px] bg-white;
       }
     }
   }

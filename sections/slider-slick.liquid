@@ -1,9 +1,9 @@
 <section class="gallery pt-[100px] my-[150px]">
-    <div class="container max-w-full">
+    <div class="container px-10 max-w-full">
         {% if section.settings.section_title != blank %}
             <div class="flex flex-nowrap w-full justify-between gap-10">
                 <div class="item item-one w-full text-center">
-                    <h3 class="text-white uppercase text-[80px] leading-[112%] font-[400] uppercase">{{ section.settings.section_title }}</h3>
+                    <h3 class="text-white uppercase text-[40px] lg:text-[80px] leading-[112%] font-[400] uppercase">{{ section.settings.section_title }}</h3>
                 </div>
             </div>
         {% endif %}
@@ -72,6 +72,22 @@
 			infinite: true,
 			variableWidth: false,
 			focusOnSelect: true,
+			responsive: [
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			]
 		});
 
 	});
