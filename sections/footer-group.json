@@ -1,7 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "footer_section_ybBC4Q": {
+      "type": "footer-section",
+      "name": "Footer - Viking Info",
+      "settings": {
+        "logo_main": "shopify://shop_images/footer-logo.png",
+        "logo_main_link": "/",
+        "logo_secondary": "shopify://shop_images/footer-logo-andico.png",
+        "logo_secondary_link": "https://andico.com.au",
+        "description": "Official distributor of premium household <br>and commercial appliances in Australia.",
+        "company_name": "Andi-Co Australia Pty. Ltd.",
+        "phone": "1800 685 899",
+        "weekday_hours": "Monday to Friday: 9am to 4:30pm",
+        "weekend_hours": "Weekend / Public Holiday: Closed",
+        "button_label": "Contact Us",
+        "button_link": "/pages/contact"
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -23,7 +49,7 @@
           "type": "text",
           "settings": {
             "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
           }
         }
       },
@@ -32,10 +58,12 @@
         "footer-1",
         "footer-2"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
@@ -48,6 +76,7 @@
     }
   },
   "order": [
+    "footer_section_ybBC4Q",
     "footer"
   ]
 }
