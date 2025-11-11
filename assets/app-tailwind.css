@@ -10,6 +10,13 @@
     content: '';
     @apply absolute inset-0 bg-gradient-to-b from-black/90 to-black/0 w-full h-[300px];
   }
+
+  @media (max-width: 768px) {
+    .product-scroll-parallax {
+      background-attachment: scroll !important; /* fallback for mobile */
+    }
+  }
+
   .hero {
     @apply p-5;
 
