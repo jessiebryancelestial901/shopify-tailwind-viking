@@ -129,7 +129,7 @@
       "type": "section-contact-form",
       "name": "Contact Form Section",
       "settings": {
-        "section_title": "Register your Interest",
+        "section_title": "Register your <br>Interest",
         "section_text": "Be the first to experience Viking in Australia. Receive exclusive launch updates and product previews.",
         "button_text": "Join the List",
         "background_color": "#000000"
