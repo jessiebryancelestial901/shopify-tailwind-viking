@@ -34,7 +34,7 @@
                                     name="contact[first_name]"
                                     id="ContactFormFirstName"
                                     placeholder="FIRST NAME"
-                                    class="w-full bg-transparent border-b border-gray-600 py-3 px-0 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
+                                    class="w-full shadow-none bg-transparent border-b border-gray-600 py-3 px-0 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
                                     required>
                         </div>
 
@@ -44,7 +44,7 @@
                                     name="contact[last_name]"
                                     id="ContactFormLastName"
                                     placeholder="LAST NAME"
-                                    class="w-full bg-transparent border-b border-gray-600 py-3 px-0 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+                                    class="w-full shadow-none bg-transparent border-b border-gray-600 py-3 px-0 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@
                                     name="contact[email]"
                                     id="ContactFormEmail"
                                     placeholder="EMAIL"
-                                    class="w-full bg-transparent border-b border-gray-600 py-3 px-0 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
+                                    class="w-full shadow-none bg-transparent border-b border-gray-600 py-3 px-0 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
                                     required>
                         </div>
 
@@ -65,7 +65,7 @@
                                     name="contact[phone]"
                                     id="ContactFormPhone"
                                     placeholder="PHONE"
-                                    class="w-full bg-transparent border-b border-gray-600 py-3 px-0 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+                                    class="w-full shadow-none bg-transparent border-b border-gray-600 py-3 px-0 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
                         </div>
                     </div>
 
@@ -75,7 +75,7 @@
                       name="contact[body]"
                       id="ContactFormBody"
                       placeholder="WHAT WOULD YOU LIKE TO HEAR ABOUT?"
-                      class="w-full bg-transparent border-b border-gray-600 py-3 px-0 h-[150px] text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"></textarea>
+                      class="w-full bg-transparent shadow-none border-b border-gray-600 py-3 px-0 h-[150px] text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"></textarea>
                         </div>
                     </div>
 
@@ -91,7 +91,9 @@
         </div>
     </div>
 </section>
-
+<style>
+    #contact_form input, #contact_form textarea{ box-shadow:none !important; }
+</style>
 {% schema %}
 {
     "name": "Contact Form Section",
