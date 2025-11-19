@@ -113,8 +113,8 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "enable_video_looping": false,
-        "enable_scroll_play": false,
+        "enable_video_looping": true,
+        "enable_scroll_play": true,
         "video": "shopify://files/videos/RS17389_1250.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "cover_image": "shopify://shop_images/video.jpg",
@@ -141,8 +141,8 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "enable_video_looping": false,
-        "enable_scroll_play": false,
+        "enable_video_looping": true,
+        "enable_scroll_play": true,
         "video": "shopify://files/videos/RS27850_12534 AGA KBB_v2.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "cover_image": "shopify://shop_images/video2.jpg",
