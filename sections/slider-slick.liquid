@@ -1,5 +1,5 @@
-<section class="gallery pt-[100px] my-[150px]">
-    <div class="container px-10 max-w-full">
+<section class="gallery pt-[30px] lg:pt-[100px] my-[15px] lg:my-[150px]">
+    <div class="container w-full max-w-full mx-auto px-10">
         {% if section.settings.section_title != blank %}
             <div class="flex flex-nowrap w-full justify-between gap-10">
                 <div class="item item-one w-full text-center">
@@ -7,7 +7,7 @@
                 </div>
             </div>
         {% endif %}
-        <div class="gallery-slider pt-5 px-[5%]">
+        <div class="mt-[20px] lg:mt-[60px] gallery-slider max-w-full mx-auto  pt-5 px-[15px]">
             <div class="slick-hero mx-auto flex items-center justify-center">
                 {% for block in section.blocks %}
                     <div class="slide-item">
@@ -48,30 +48,57 @@
 
 			var centerIndex = centerSlide.data('slick-index');
 
-			$slides.removeClass('slide-big slide-medium slide-small');
+			$slides.removeClass(
+				'post-1 post-2 post-3 post-4 post-5 slide-big slide-medium slide-small'
+			);
 
 			$slides.each(function () {
 				var slideIndex = $(this).data('slick-index');
 				var diff = Math.abs(centerIndex - slideIndex);
 
-				if (diff === 0) $(this).addClass('slide-big');
-				else if (diff === 1) $(this).addClass('slide-medium');
-				else $(this).addClass('slide-small');
+				if (diff === 0) {
+					// CENTER SLIDE
+					$(this).addClass('post-3 slide-big');
+				}
+
+				else if (diff === 1) {
+					// NEIGHBORS
+					if (slideIndex < centerIndex) {
+						$(this).addClass('post-2 slide-medium'); // LEFT
+					} else {
+						$(this).addClass('post-4 slide-medium'); // RIGHT
+					}
+				}
+
+				else if (diff === 2) {
+					// FAR LEFT / FAR RIGHT
+					if (slideIndex < centerIndex) {
+						$(this).addClass('post-1 slide-small'); // FAR LEFT
+					} else {
+						$(this).addClass('post-5 slide-small'); // FAR RIGHT
+					}
+				}
+
+				else {
+					// Everything else
+					$(this).addClass('slide-small');
+				}
 			});
 		}
+
 
 		$slider.on('init afterChange', updateSizes);
 
 		$slider.slick({
 			centerMode: true,
-			centerPadding: '0px',
+			centerPadding: '100px',
 			slidesToShow: 5,
+			infinite: true,
 			arrows: false,
+			focusOnSelect: true,
+			variableWidth: false,
 			autoplay: true,
 			autoplaySpeed: 2000,
-			infinite: true,
-			variableWidth: false,
-			focusOnSelect: true,
 			responsive: [
 				{
 					breakpoint: 1024,
@@ -92,6 +119,7 @@
 
 	});
 </script>
+
 
 
 {% schema %}
