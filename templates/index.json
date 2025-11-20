@@ -14,7 +14,7 @@
       "name": "Hero Section",
       "settings": {
         "media_type": "video",
-        "bg_image": "shopify://shop_images/hero.png",    
+        "bg_image": "shopify://shop_images/hero.png",
         "bg_video": "shopify://files/videos/RS17389_1250 (online-video-cutter.com).mp4",
         "section_title": "<h1>THE FIRST. <br/>STILL THE BEST.</h1>",
         "section_second_title": ""
@@ -129,7 +129,7 @@
       "type": "section-contact-form",
       "name": "Contact Form Section",
       "settings": {
-        "section_title": "Register your Interest",
+        "section_title": "Register your <br> Interest",
         "section_text": "Be the first to experience Viking in Australia. <br>Receive exclusive launch updates and product previews.",
         "button_text": "Join the List",
         "background_color": "#000000"
