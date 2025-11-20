@@ -13,8 +13,9 @@
       "type": "section-hero",
       "name": "Hero Section",
       "settings": {
-        "media_type": "image",
+        "media_type": "video",
         "bg_image": "shopify://shop_images/hero.png",
+        "bg_video": "shopify://files/videos/339b8d7e3dab4ceabd64667d8a06736e.HD-1080p-7.2Mbps-60075380.mp4",
         "section_title": "<h1>THE FIRST. <br/>STILL THE BEST.</h1>",
         "section_second_title": ""
       }
