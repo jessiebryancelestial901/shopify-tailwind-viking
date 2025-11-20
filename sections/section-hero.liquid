@@ -1,11 +1,27 @@
-<section id="hero" class="hero min-h-[calc(100vh-134px)] w-full relative overflow-hidden flex items-end bg-black text-white">
+<section id="hero" class="hero min-h-[calc(100vh-165px)] w-full relative overflow-hidden flex items-end bg-black text-white">
 
-    {% if section.settings.bg_image %}
+    {% if section.settings.media_type == 'image' and section.settings.bg_image %}
         <!-- Banner Image -->
-        <img src="{{ section.settings.bg_image | img_url: 'master' }}"
-             alt="Hero Banner"
-             class="absolute inset-0 w-full max-w-full lg:max-w-[80%] mx-auto h-full object-cover">
+        <img
+                src="{{ section.settings.bg_image | img_url: 'master' }}"
+                alt="Hero Banner"
+                class="absolute inset-0 w-full max-w-full lg:max-w-[80%] mx-auto h-full object-cover">
     {% endif %}
+
+    {% if section.settings.media_type == 'video' and section.settings.bg_video %}
+        <!-- Banner Video -->
+        {{
+        section.settings.bg_video
+        | video_tag:
+        autoplay: true,
+        loop: true,
+        muted: true,
+        playsinline: true,
+        controls: false,
+        class: 'absolute inset-0 w-full max-w-full lg:max-w-[80%] mx-auto h-full object-cover'
+        }}
+    {% endif %}
+
     <!-- Content -->
     <div class="relative z-10 container mx-auto text-center px-6 pb-10">
         {% if section.settings.section_title != blank %}
@@ -23,6 +39,26 @@
     "name": "Hero Section",
     "settings": [
         {
+            "type": "select",
+            "id": "media_type",
+            "label": "Background Type",
+            "options": [
+                { "value": "image", "label": "Image" },
+                { "value": "video", "label": "Video" }
+            ],
+            "default": "image"
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+        },
+        {
+            "type": "video",
+            "id": "bg_video",
+            "label": "Background Video"
+        },
+        {
             "type": "richtext",
             "id": "section_title",
             "label": "Section Title",
@@ -33,16 +69,11 @@
             "id": "section_second_title",
             "label": "Section Second Title",
             "default": "Featured Section"
-        },
-        {
-            "type": "image_picker",
-            "id": "bg_image",
-            "label": "Background Image"
         }
     ],
     "presets": [
         {
-        "name": "Hero Section"
+          "name": "Hero Section"
         }
     ]
 }

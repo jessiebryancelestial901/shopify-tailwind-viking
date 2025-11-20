@@ -13,17 +13,19 @@
       "type": "section-hero",
       "name": "Hero Section",
       "settings": {
+        "media_type": "video",
+        "bg_image": "shopify://shop_images/hero.png",
+        "bg_video": "shopify://files/videos/RS17389_1250 (online-video-cutter.com).mp4",
         "section_title": "<h1>THE FIRST. <br/>STILL THE BEST.</h1>",
-        "section_second_title": "",
-        "bg_image": "shopify://shop_images/hero.png"
+        "section_second_title": ""
       }
     },
     "section_about_jCKyWH": {
       "type": "section-about",
       "name": "About Section",
       "settings": {
-        "section_title": "40 YEARS OF INNOVATION, CRAFTSMANSHIP ANDBEING THE BEST.",
-        "section_second_title": "Pioneering the professional-grade range for home.Leading the evolution of the modern luxury kitchen.Setting the standard in professional-grade innovation."
+        "section_title": "40 YEARS OF INNOVATION, CRAFTSMANSHIP AND <br>BEING THE BEST.",
+        "section_second_title": "Pioneering the professional-grade range for home.<br>Leading the evolution of the modern luxury kitchen.<br>Setting the standard in professional-grade innovation."
       }
     },
     "section_parallax_tYbHhD": {
@@ -102,7 +104,7 @@
       ],
       "name": "Slick Slider",
       "settings": {
-        "section_title": "Kitches begin with VIking"
+        "section_title": "Kitchens begin with VIking"
       }
     },
     "video_7wHjfe": {
@@ -111,7 +113,8 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "enable_video_looping": false,
+        "enable_video_looping": true,
+        "enable_scroll_play": true,
         "video": "shopify://files/videos/RS17389_1250.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "cover_image": "shopify://shop_images/video.jpg",
@@ -127,7 +130,7 @@
       "name": "Contact Form Section",
       "settings": {
         "section_title": "Register your Interest",
-        "section_text": "Be the first to experience Viking in Australia. Receive exclusive launch updates and product previews.",
+        "section_text": "Be the first to experience Viking in Australia. <br>Receive exclusive launch updates and product previews.",
         "button_text": "Join the List",
         "background_color": "#000000"
       }
@@ -138,7 +141,8 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "enable_video_looping": false,
+        "enable_video_looping": true,
+        "enable_scroll_play": true,
         "video": "shopify://files/videos/RS27850_12534 AGA KBB_v2.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "cover_image": "shopify://shop_images/video2.jpg",
