@@ -379,10 +379,5 @@
         }
       }
     }
-  },
-  "platform_customizations": {
-    "custom_css": [
-      ".section-header {z-index: 999 !important;}"
-    ]
   }
 }
