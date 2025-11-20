@@ -13,27 +13,29 @@
             padding-bottom: {{ section.settings.padding_bottom }}px;
         }
     }
-    /* FULL-WIDTH cover container */
-    .video-section__media.deferred-media {
-        width: 100% !important;
-        height: 100vh !important; /* or any custom height */
-        padding-top: 0 !important;
-        --ratio-percent: 0 !important;
-        overflow: hidden !important;
-        display: block;
-        position: relative;
-    }
-    .video-section__media.deferred-media iframe,
-    .video-section__media.deferred-media video,
-    .video-section__media.deferred-media .deferred-media__poster,
-    .video-section__media.deferred-media .deferred-media__media {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;      /* <-- Same as image cover */
-        object-position: center center !important;
-        max-width: none !important;
-        max-height: none !important;
-        display: block !important;
+    @media (min-width:767px){
+        /* FULL-WIDTH cover container */
+        .video-section__media.deferred-media {
+            width: 100% !important;
+            height: 100vh !important; /* or any custom height */
+            padding-top: 0 !important;
+            --ratio-percent: 0 !important;
+            overflow: hidden !important;
+            display: block;
+            position: relative;
+        }
+        .video-section__media.deferred-media iframe,
+        .video-section__media.deferred-media video,
+        .video-section__media.deferred-media .deferred-media__poster,
+        .video-section__media.deferred-media .deferred-media__media {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;      /* <-- Same as image cover */
+            object-position: center center !important;
+            max-width: none !important;
+            max-height: none !important;
+            display: block !important;
+        }
     }
 
     /* Hide play button completely */
