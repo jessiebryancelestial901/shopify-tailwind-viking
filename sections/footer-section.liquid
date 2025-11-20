@@ -5,13 +5,13 @@
             <!-- Left Column -->
             <div class="flex flex-col item item-one w-full md:max-w-[50%] items-center justify-center text-center">
                 {% if section.settings.logo_main != blank %}
-                    <a href="{{ section.settings.logo_main_link }}" title="Main Logo Link">
+                    <a href="{{ section.settings.logo_main_link }}" class = "footer-main-logo" title="{{ section.settings.logo_main.alt | default: 'Viking Logo' }}">
                         <img src="{{ section.settings.logo_main | img_url: '400x' }}" alt="{{ section.settings.logo_main.alt | default: 'Viking Logo' }}">
                     </a>
                 {% endif %}
 
                 {% if section.settings.logo_secondary != blank %}
-                    <a href="{{ section.settings.logo_secondary_link }}" title="Secondary Logo Link">
+                    <a href="{{ section.settings.logo_secondary_link }}" class = "footer-second-logo" title="{{ section.settings.logo_secondary.alt | default: 'Andi-Co Australia Logo' }}">
                         <img src="{{ section.settings.logo_secondary | img_url: '400x' }}" alt="{{ section.settings.logo_secondary.alt | default: 'Andi-Co Australia Logo' }}" class="my-5">
                     </a>
                 {% endif %}
@@ -50,6 +50,21 @@
         </div>
     </div>
 </section>
+
+{% style %}
+    @media(max-width:600px){
+        a.footer-main-logo img, a.footer-second-logo img {
+            max-width: 80% !important;
+            width: 100%;
+            display: block;
+            margin: 0 auto  15px;
+        }
+
+        a.footer-main-logo, a.footer-second-logo {
+            display: block;
+        }
+    }
+{% endstyle %}
 
 {% schema %}
 {

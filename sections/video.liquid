@@ -3,16 +3,52 @@
 
 {%- style -%}
     .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
     @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+        .section-{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
     }
+    /* FULL-WIDTH cover container */
+    .video-section__media.deferred-media {
+        width: 100% !important;
+        height: 100vh !important; /* or any custom height */
+        padding-top: 0 !important;
+        --ratio-percent: 0 !important;
+        overflow: hidden !important;
+        display: block;
+        position: relative;
     }
+    .video-section__media.deferred-media iframe,
+    .video-section__media.deferred-media video,
+    .video-section__media.deferred-media .deferred-media__poster,
+    .video-section__media.deferred-media .deferred-media__media {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;      /* <-- Same as image cover */
+        object-position: center center !important;
+        max-width: none !important;
+        max-height: none !important;
+        display: block !important;
+    }
+
+    /* Hide play button completely */
+    .video-section__media.deferred-media .deferred-media__poster-button,
+    .video-section__media.deferred-media .video-section__poster,
+    .video-section__media.deferred-media .deferred-media__poster {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+
+
+
 {%- endstyle -%}
 
 {%- liquid
@@ -75,10 +111,10 @@
                     {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
                 {%- endif -%}
                 <span class="deferred-media__poster-button motion-reduce">
-          <span class="svg-wrapper">
-            {{- 'icon-play.svg' | inline_asset_content -}}
-          </span>
-        </span>
+                  <span class="svg-wrapper">
+                    {{- 'icon-play.svg' | inline_asset_content -}}
+                  </span>
+                </span>
             </button>
             <template>
                 {%- if section.settings.video == null and section.settings.video_url != null -%}
@@ -299,5 +335,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
 
     sections.forEach((root) => observer.observe(root));
+
+    function updateHeaderHeight() {
+        const header = document.querySelector('header.header, .site-header, .header-wrapper');
+        if (!header) return;
+
+        const h = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', h + 'px');
+    }
+
+    document.addEventListener("DOMContentLoaded", updateHeaderHeight);
+    window.addEventListener("resize", updateHeaderHeight);
 });
+
 {% endjavascript %}

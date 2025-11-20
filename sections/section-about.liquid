@@ -1,14 +1,14 @@
-<section id = "about" class="about lg:h-[65vh] mt-[100px] mb-10 py-10 pb-[300px]">
+<section id = "about" class="about lg:h-[850px] xlg:h-[725px] mt-[100px] mb-10 py-10 pb-[300px]">
     <div class = "container px-10 mx-auto h-full">
         <div class = "flex flex-wrap lg:flex-nowrap w-full justify-between items-stretch h-full gap-10">
             {% if section.settings.section_title != blank %}
                 <div class = "item item-one w-full lg:max-w-1/2 items-start content-start">
-                    <h3 class = "text-white uppercase text-[52px] leading-[112%] font-[400]">{{ section.settings.section_title }}</h3>
+                    <h3 class = "text-white uppercase text-[32px] md:text-[45px] lg:text-[52px] leading-[112%] font-[400]">{{ section.settings.section_title }}</h3>
                 </div>
             {% endif %}
             {% if section.settings.section_second_title != blank %}
                 <div class = "item item-second w-full lg:max-w-1/2 items-start lg:items-end content-end">
-                    <p class = "text-white text-[22px]">{{ section.settings.section_second_title }}</p>
+                    <p class = "text-white text-[18px] lg:text-[22px]">{{ section.settings.section_second_title }}</p>
                 </div>
             {% endif %}
         </div>

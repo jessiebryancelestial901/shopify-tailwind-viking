@@ -13,9 +13,11 @@
       "type": "section-hero",
       "name": "Hero Section",
       "settings": {
+        "media_type": "video",
+        "bg_image": "shopify://shop_images/hero.png",
+        "bg_video": "shopify://files/videos/339b8d7e3dab4ceabd64667d8a06736e.HD-1080p-7.2Mbps-60075380.mp4",
         "section_title": "<h1>THE FIRST. <br/>STILL THE BEST.</h1>",
-        "section_second_title": "",
-        "bg_image": "shopify://shop_images/hero.png"
+        "section_second_title": ""
       }
     },
     "section_about_jCKyWH": {
@@ -111,7 +113,8 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "enable_video_looping": false,
+        "enable_video_looping": true,
+        "enable_scroll_play": true,
         "video": "shopify://files/videos/RS17389_1250.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "cover_image": "shopify://shop_images/video.jpg",
@@ -138,7 +141,8 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "enable_video_looping": false,
+        "enable_video_looping": true,
+        "enable_scroll_play": true,
         "video": "shopify://files/videos/RS27850_12534 AGA KBB_v2.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "cover_image": "shopify://shop_images/video2.jpg",

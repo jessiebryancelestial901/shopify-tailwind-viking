@@ -1,11 +1,11 @@
-<section id="hero" class="hero min-h-[calc(100vh-165px)] w-full relative overflow-hidden flex items-end bg-black text-white">
+<section id="hero" class="hero h-screen -mt-[var(--header-height)] w-full relative overflow-hidden flex items-end bg-black text-white">
 
     {% if section.settings.media_type == 'image' and section.settings.bg_image %}
         <!-- Banner Image -->
         <img
                 src="{{ section.settings.bg_image | img_url: 'master' }}"
                 alt="Hero Banner"
-                class="absolute inset-0 w-full max-w-full lg:max-w-[80%] mx-auto h-full object-cover">
+                class="absolute inset-0 w-full max-w-full mx-auto h-full object-cover">
     {% endif %}
 
     {% if section.settings.media_type == 'video' and section.settings.bg_video %}
@@ -18,7 +18,7 @@
         muted: true,
         playsinline: true,
         controls: false,
-        class: 'absolute inset-0 w-full max-w-full lg:max-w-[80%] mx-auto h-full object-cover'
+        class: 'absolute inset-0 w-full max-w-full mx-auto h-full object-cover'
         }}
     {% endif %}
 
