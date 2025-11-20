@@ -36,59 +36,78 @@
 
 
 <script>
-	jQuery(document).ready(function($) {
+	jQuery(document).ready(function ($) {
 
-		var $slider = $('.slick-hero');
+		const $slider = $('.slick-hero');
 		if (!$slider.length) return;
 
-		function updateSizes() {
-			var $slides = $slider.find('.slick-slide');
-			var centerSlide = $slider.find('.slick-center');
-			if (!centerSlide.length) return;
+		$slider.addClass('is-pre-init');
 
-			var centerIndex = centerSlide.data('slick-index');
+		function updatePositions(slick) {
+			const $slides = $slider.find('.slick-slide');
+			const slideCount = slick.slideCount;
+
+			// LOGICAL current slide (0..count-1)
+			const centerIndex = slick.currentSlide;
 
 			$slides.removeClass(
-				'post-1 post-2 post-3 post-4 post-5 slide-big slide-medium slide-small'
+				'post-1 post-2 post-3 post-4 post-5 ' +
+				'is-prev-1 is-prev-2 is-next-1 is-next-2 is-center ' +
+				'slide-big slide-medium slide-small'
 			);
 
 			$slides.each(function () {
-				var slideIndex = $(this).data('slick-index');
-				var diff = Math.abs(centerIndex - slideIndex);
+				const $slide = $(this);
+				const raw = parseInt($slide.attr('data-slick-index'), 10);
 
+				if (isNaN(raw)) return;
+
+				// convert clones → logical index
+				const logical = ((raw % slideCount) + slideCount) % slideCount;
+
+				// circular distance (handles last→first smoothly)
+				let diff = logical - centerIndex;
+				if (diff > slideCount / 2) diff -= slideCount;
+				if (diff < -slideCount / 2) diff += slideCount;
+
+				// Assign classes based on distance
 				if (diff === 0) {
-					// CENTER SLIDE
-					$(this).addClass('post-3 slide-big');
-				}
-
-				else if (diff === 1) {
-					// NEIGHBORS
-					if (slideIndex < centerIndex) {
-						$(this).addClass('post-2 slide-medium'); // LEFT
-					} else {
-						$(this).addClass('post-4 slide-medium'); // RIGHT
-					}
-				}
-
-				else if (diff === 2) {
-					// FAR LEFT / FAR RIGHT
-					if (slideIndex < centerIndex) {
-						$(this).addClass('post-1 slide-small'); // FAR LEFT
-					} else {
-						$(this).addClass('post-5 slide-small'); // FAR RIGHT
-					}
-				}
-
-				else {
-					// Everything else
-					$(this).addClass('slide-small');
+					$slide.addClass('post-3 slide-big is-center');
+				} else if (diff === -1) {
+					$slide.addClass('post-2 slide-medium is-prev-1');
+				} else if (diff === -2) {
+					$slide.addClass('post-1 slide-small is-prev-2');
+				} else if (diff === 1) {
+					$slide.addClass('post-4 slide-medium is-next-1');
+				} else if (diff === 2) {
+					$slide.addClass('post-5 slide-small is-next-2');
+				} else {
+					$slide.addClass('slide-small');
 				}
 			});
 		}
 
 
-		$slider.on('init afterChange', updateSizes);
+		$slider.on('beforeChange', function (e, slick, current, next) {
+			const last = slick.slideCount - 1;
+			const first = 0;
+			if ((current === last && next === first) ||
+				(current === first && next === last)) {
+				$slider.addClass('is-wrapping');
+			}
+		});
 
+		$slider.on('init', function (e, slick) {
+			updatePositions(slick);
+			$slider.removeClass('is-pre-init');
+		});
+
+		$slider.on('afterChange', function (e, slick, current) {
+			updatePositions(slick);
+		});
+
+
+		// INIT SLICK
 		$slider.slick({
 			centerMode: true,
 			centerPadding: '100px',
@@ -96,33 +115,47 @@
 			infinite: true,
 			arrows: false,
 			focusOnSelect: true,
-			variableWidth: false,
 			autoplay: true,
 			autoplaySpeed: 2000,
+			variableWidth: false,
 			responsive: [
 				{
 					breakpoint: 1024,
 					settings: {
-						centerPadding: '60px',
+						centerPadding: '25px',
 						slidesToShow: 3,
-						slidesToScroll: 3,
+						slidesToScroll: 3
 					}
 				},
 				{
 					breakpoint: 600,
 					settings: {
-						centerPadding: '30px',
+						centerPadding: '10px',
 						slidesToShow: 1,
 						slidesToScroll: 1
 					}
 				}
 			]
 		});
-
 	});
+
 </script>
 
+{% style %}
 
+	/* hide slider until initialized */
+	.slick-hero.is-pre-init {
+	opacity: 0;
+	}
+
+	/* during wrap-around: disable transitions so it doesn't glitch */
+	.slick-hero.is-wrapping .slick-slide {
+	transition: none !important;
+	-webkit-transition: none !important;
+	}
+
+
+{% endstyle %}
 
 {% schema %}
 {

@@ -10,8 +10,8 @@
     </section>
 {% endif %}
 {% if section.settings.bg_image %}
-    <section class="relative product-scroll product-scroll-parallax relative h-[90vh] bg-fixed bg-top bg-cover"
-             style="background-image: url('{{ section.settings.bg_image | img_url: 'master' }}');">
+    <section class="relative product-scroll product-scroll-parallax relative h-full w-full">
+        <img class = "w-full h-full" src = "{{ section.settings.bg_image | img_url: 'master' }}" alt = "{{ section.settings.section_title | raw }}">
     </section>
 {% endif %}
 

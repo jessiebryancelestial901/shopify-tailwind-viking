@@ -14,7 +14,7 @@
       "name": "Hero Section",
       "settings": {
         "media_type": "video",
-        "bg_image": "shopify://shop_images/hero.png",
+        "bg_image": "shopify://shop_images/hero.png",    
         "bg_video": "shopify://files/videos/RS17389_1250 (online-video-cutter.com).mp4",
         "section_title": "<h1>THE FIRST. <br/>STILL THE BEST.</h1>",
         "section_second_title": ""
