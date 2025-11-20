@@ -14,7 +14,8 @@
     "header": {
       "type": "header",
       "custom_css": [
-        "details-modal.header__search,header .header__icons {display: none !important;}"
+        "details-modal.header__search,header .header__icons {display: none !important;}",
+        "sticky-header.header {background: transparent;}"
       ],
       "settings": {
         "logo_position": "top-center",
@@ -22,11 +23,11 @@
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
         "show_line_separator": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-fe9fd05a-c752-4ca8-8663-13a983459f13",
         "menu_color_scheme": "",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
