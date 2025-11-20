@@ -13,7 +13,7 @@
             padding-bottom: {{ section.settings.padding_bottom }}px;
         }
     }
-    @media (min-width:767px){
+    @media (min-width:600px){
         /* FULL-WIDTH cover container */
         .video-section__media.deferred-media {
             width: 100% !important;
@@ -36,6 +36,10 @@
             max-height: none !important;
             display: block !important;
         }
+    }
+    /* FULL-WIDTH cover container */
+    .video-section__media.deferred-media {
+        height: 40vh !important; /* or any custom height */
     }
 
     /* Hide play button completely */
