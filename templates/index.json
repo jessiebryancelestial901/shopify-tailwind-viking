@@ -14,8 +14,8 @@
       "name": "Hero Section",
       "settings": {
         "media_type": "video",
-        "bg_image": "shopify://shop_images/hero.png",
-        "bg_video": "shopify://files/videos/339b8d7e3dab4ceabd64667d8a06736e.HD-1080p-7.2Mbps-60075380.mp4",
+        "bg_image": "shopify://shop_images/hero.png",    
+        "bg_video": "shopify://files/videos/RS17389_1250 (online-video-cutter.com).mp4",
         "section_title": "<h1>THE FIRST. <br/>STILL THE BEST.</h1>",
         "section_second_title": ""
       }
@@ -24,8 +24,8 @@
       "type": "section-about",
       "name": "About Section",
       "settings": {
-        "section_title": "40 YEARS OF INNOVATION, CRAFTSMANSHIP ANDBEING THE BEST.",
-        "section_second_title": "Pioneering the professional-grade range for home.Leading the evolution of the modern luxury kitchen.Setting the standard in professional-grade innovation."
+        "section_title": "40 YEARS OF INNOVATION, CRAFTSMANSHIP AND <br>BEING THE BEST.",
+        "section_second_title": "Pioneering the professional-grade range for home.<br>Leading the evolution of the modern luxury kitchen.<br>Setting the standard in professional-grade innovation."
       }
     },
     "section_parallax_tYbHhD": {
@@ -104,7 +104,7 @@
       ],
       "name": "Slick Slider",
       "settings": {
-        "section_title": "Kitches begin with VIking"
+        "section_title": "Kitchens begin with VIking"
       }
     },
     "video_7wHjfe": {
@@ -130,7 +130,7 @@
       "name": "Contact Form Section",
       "settings": {
         "section_title": "Register your Interest",
-        "section_text": "Be the first to experience Viking in Australia. Receive exclusive launch updates and product previews.",
+        "section_text": "Be the first to experience Viking in Australia. <br>Receive exclusive launch updates and product previews.",
         "button_text": "Join the List",
         "background_color": "#000000"
       }
