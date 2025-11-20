@@ -59,41 +59,80 @@
       .slick-slide {
         z-index: 1;
         position: relative;
-        transition: 0.25s transform ease-in, 0.25s background ease-in;
+        -webkit-transition: -webkit-transform 0.25s ease-in,
+          background 0.25s ease-in;
+        -moz-transition: -moz-transform 0.25s ease-in, background 0.25s ease-in;
+        -o-transition: -o-transform 0.25s ease-in, background 0.25s ease-in;
+        transition: transform 0.25s ease-in, background 0.25s ease-in;
         opacity: 0;
+        -webkit-transform: translateX(30%) scale(0.6);
+        -moz-transform: translateX(30%) scale(0.6);
+        -ms-transform: translateX(30%) scale(0.6);
+        -o-transform: translateX(30%) scale(0.6);
         transform: translateX(30%) scale(0.6);
       }
       .slick-slide.slick-active {
         opacity: 1;
+        img {
+          @apply h-[445px] md:h-full;
+        }
       }
       .slick-slide.slide-small.post-1 {
+        -webkit-transform: translateX(30%) scale(0.6);
+        -moz-transform: translateX(30%) scale(0.6);
+        -ms-transform: translateX(30%) scale(0.6);
+        -o-transform: translateX(30%) scale(0.6);
         transform: translateX(30%) scale(0.6);
         z-index: 3;
       }
 
       .slick-slide.slide-small.post-5 {
+        -webkit-transform: translateX(-30%) scale(0.6);
+        -moz-transform: translateX(-30%) scale(0.6);
+        -ms-transform: translateX(-30%) scale(0.6);
+        -o-transform: translateX(-0%) scale(0.6);
         transform: translateX(-30%) scale(0.6);
         z-index: 3;
       }
       .slick-slide.slick-active.slide-small.post-1 {
+        -webkit-transform: translateX(30%) scale(0.6);
+        -moz-transform: translateX(30%) scale(0.6);
+        -ms-transform: translateX(30%) scale(0.6);
+        -o-transform: translateX(30%) scale(0.6);
         transform: translateX(30%) scale(0.6);
         z-index: 3;
       }
 
       .slick-slide.slick-active.slide-small.post-5 {
+        -webkit-transform: translateX(-30%) scale(0.6);
+        -moz-transform: translateX(-30%) scale(0.6);
+        -ms-transform: translateX(-30%) scale(0.6);
+        -o-transform: translateX(-30%) scale(0.6);
         transform: translateX(-30%) scale(0.6);
         z-index: 3;
       }
       .slick-slide.slick-active.post-2.slide-medium {
+        -webkit-transform: translateX(5%) scale(0.8);
+        -moz-transform: translateX(5%) scale(0.8);
+        -ms-transform: translateX(5%) scale(0.8);
+        -o-transform: translateX(5%) scale(0.8);
         transform: translateX(5%) scale(0.8);
         z-index: 4;
       }
       .slick-slide.slick-active.post-4.slide-medium {
+        -webkit-transform: translateX(-5%) scale(0.8);
+        -moz-transform: translateX(-5%) scale(0.8);
+        -ms-transform: translateX(-5%) scale(0.8);
+        -o-transform: translateX(-5%) scale(0.8);
         transform: translateX(-5%) scale(0.8);
         z-index: 4;
       }
 
       .slick-current.slick-active.slick-center.post-3.slide-big {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
         transform: scale(1);
         z-index: 5;
       }
