@@ -144,4 +144,22 @@
       }
     }
   }
+
+  .section-header.shopify-section-header-sticky.scrolled-past-header img {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .section-header.shopify-section-header-sticky.scrolled-past-header
+    .header.header--top-center {
+    padding: 0;
+    background: #000;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header__heading-logo-wrapper {
+    text-align: center;
+  }
 }
